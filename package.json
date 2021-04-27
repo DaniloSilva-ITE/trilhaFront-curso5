@@ -1,0 +1,21 @@
+{
+  "name": "bytebank",
+  "version": "1.0.0",
+  "description": "Projeto do bytebank para seus clientes",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DaniloSilva-ITE/trilhaFront-curso5.git"
+  },
+  "author": "Danilo",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/DaniloSilva-ITE/trilhaFront-curso5/issues"
+  },
+  "homepage": "https://github.com/DaniloSilva-ITE/trilhaFront-curso5#readme"
+}

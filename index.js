@@ -1,33 +1,8 @@
-class Cliente{
-    nome;
-    cpf;
-}
-
-class ContaCorrente{
-    agencia;
-
-    // https://github.com/tc39/proposal-class-fields#private-fields
-    // atributo privado padrão node coloca #nomeVar
-    // atributo privado padrão js coloca _nomeVar
-    _saldo = 0;
-
-    sacar(valor){
-        if(this._saldo >= valor){
-            this._saldo -= valor;
-            return valor;
-            // console.log("\nSacado:",valor);
-            // console.log("Saldo:",this._saldo);
-        }
-    }
-
-    depositar(valor){
-        if(valor > 0){
-            this._saldo += valor;
-            // console.log("\nDepositado:",valor);
-            // console.log("Saldo:",this.#saldo);
-        }
-    }
-}
+// https://docs.npmjs.com/cli/v7/configuring-npm/package-json
+// npm init 
+// enter all
+import {Cliente} from "./Cliente.js"
+import {ContaCorrente} from "./ContaCorrente.js"
 
 const cliente1 = new Cliente();
 cliente1.nome = "Ricardo";
@@ -40,11 +15,17 @@ cliente2.cpf = "88822233309";
 const contaCorrenteRicardo = new ContaCorrente();
 // cria qualquer coisa o gruda ele nesse objeto
 // contaCorrenteRicardo.qualquerCoisa = 1000;
+contaCorrenteRicardo.cliente = cliente1;
 contaCorrenteRicardo.agencia = 1001;
 
+const contaCorrenteAlice = new ContaCorrente();
+contaCorrenteAlice.cliente = cliente2;
+contaCorrenteAlice.agencia = 1002;
+
 contaCorrenteRicardo.depositar(100);
-contaCorrenteRicardo.depositar(100);
-contaCorrenteRicardo.depositar(100);
-contaCorrenteRicardo.sacar(50);
+contaCorrenteAlice.depositar(100);
+
+contaCorrenteRicardo.transferir(50, contaCorrenteAlice);
 
 console.log(contaCorrenteRicardo);
+console.log(contaCorrenteAlice);
