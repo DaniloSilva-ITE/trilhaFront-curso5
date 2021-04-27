@@ -9,10 +9,14 @@ const cc2 = new ContaCorrente(cliente2, 1002);
 
 cc1.depositar(1000);
 cc2.depositar(1000);
+cc1.transferir(200, cc2);
 
-let valor = 200;
-cc1.transferir(valor, cc2);
+const listaCC = new Array()
+listaCC.push(cc1);
+listaCC.push(cc2);
 
-console.log(cc1);
+console.log(listaCC);
+
+// possibilidades pra ver qnts contas tenho
 console.log(ContaCorrente.numDeContas);
-//console.log(cc2);
+console.log(listaCC.length);
